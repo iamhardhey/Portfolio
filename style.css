@@ -1,0 +1,251 @@
+body {
+    background-color:  rgba(128, 0, 128, 0.639);
+
+}
+.header {
+  position: sticky;
+  top: 0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 20px 30px;
+  background: rgb(148, 80, 138);
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav {
+  display: flex;
+  gap: 30px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+}
+
+
+ .hero {
+  width: 400px;
+  height: 500px;
+  
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  border-radius: 50%;
+  margin: auto;
+  color: #fff;
+}
+
+.here {
+  background-color: antiquewhite;
+  padding: 6px 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #000;
+  font-weight: 600;
+}
+
+.about-section {
+  max-width: 1000px;
+  margin: 80px auto;
+  padding: 20px;
+}
+
+.about-container {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.about-image img {
+  border-radius: 50%;        
+  width: 200px;
+  height: 200px;
+  object-fit: cover;         
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+.about-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: black;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.about-text strong {
+  color: black;
+}
+
+.contact-section {
+  max-width: 900px;
+  margin: 80px auto;
+  padding: 40px 20px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.contact-section h2 {
+  font-size: 2.5rem;
+  color: black; /* luxury purple vibe */
+  margin-bottom: 20px;
+}
+
+.contact-section .intro,
+.contact-section .closing {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: white;
+  margin-bottom: 25px;
+}
+
+.contact-info p {
+  font-size: 1.1rem;
+  margin: 8px 0;
+  color: #333;
+}
+
+.contact-info strong {
+  color: black;
+}
+
+.contact-info a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+  color: #6a1b9a;
+  text-decoration: underline;
+}
+
+
+.site-footer {
+  background-color: rgb(148, 80, 138);
+  color: black;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  margin-top: 80px;
+}
+
+.site-footer p {
+  margin: 0;
+  letter-spacing: 5px;
+}
+
+
+
+/* HERO SECTION RESPONSIVE */
+@media (max-width: 768px) {
+  .hero {
+    width: 300px;
+    height: 300px;
+    padding: 20px;
+  }
+  .hero h2 {
+    font-size: 1.6rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  .here {
+    padding: 5px 10px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    width: 220px;
+    height: 220px;
+  }
+  .hero h2 {
+    font-size: 1.4rem;
+  }
+  .hero p {
+    font-size: 0.9rem;
+  }
+  .here {
+    padding: 4px 8px;
+    font-size: 0.85rem;
+  }
+}
+
+/* ABOUT SECTION RESPONSIVE */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .about-image img {
+    width: 150px;
+    height: 150px;
+  }
+  .about-text h2 {
+    font-size: 2rem;
+  }
+  .about-text p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-image img {
+    width: 120px;
+    height: 120px;
+  }
+  .about-text h2 {
+    font-size: 1.6rem;
+  }
+  .about-text p {
+    font-size: 0.95rem;
+  }
+}
+
+/* CONTACT SECTION RESPONSIVE */
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 30px 15px;
+  }
+  .contact-section h2 {
+    font-size: 2rem;
+  }
+  .contact-section .intro,
+  .contact-section .closing,
+  .contact-info p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-section h2 {
+    font-size: 1.6rem;
+  }
+  .contact-section .intro,
+  .contact-section .closing,
+  .contact-info p {
+    font-size: 0.95rem;
+  }
+}
