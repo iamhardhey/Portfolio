@@ -50,6 +50,7 @@ body {
     border-radius: 50%;
     margin: auto;
     color: #fff;
+    min-height: 100vh;
 }
 
 .hero h2 {
