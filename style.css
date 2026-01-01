@@ -83,6 +83,7 @@ a:hover {
     flex-direction: column;
     cursor: pointer;
     gap: 5px;
+    z-index: 110;
 }
 
 .hamburger span {
@@ -96,7 +97,10 @@ a:hover {
     display: none;
 }
 
+/* Hamburger menu for mobile */
 @media (max-width: 768px) {
+    .hamburger { display: flex; }
+
     .nav {
         position: fixed;
         top: 0;
@@ -108,6 +112,7 @@ a:hover {
         padding-top: 5rem;
         gap: 2rem;
         transition: right 0.3s ease;
+        z-index: 100;
     }
 
     .nav a {
@@ -119,8 +124,20 @@ a:hover {
         right: 0;
     }
 
-    .hamburger {
-        display: flex;
+    /* Overlay for closing menu */
+    .overlay {
+        display: none;
+    }
+
+    #menu-toggle:checked ~ .overlay {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        z-index: 90;
     }
 }
 
@@ -265,40 +282,84 @@ p {
 }
 
 /* -------------------------
-   CONTACT
+   CONTACT PAGE
 ------------------------- */
-.contact-section h2 {
-    font-size: 2.2rem;
-    color: #00bcd4;
-    margin-bottom: 1rem;
-    text-align: center;
+.contact-section {
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background-color: #1f1f1f;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
 }
 
-.contact-info p, .social-links a {
+.contact-section h2 {
+    font-size: 2.5rem;
+    color: #00bcd4;
+    text-align: center;
     margin-bottom: 1rem;
+}
+
+.contact-section p.intro {
+    font-size: 1.1rem;
+    text-align: center;
+    color: #ccc;
+    margin-bottom: 2rem;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.contact-info p {
+    font-size: 1.1rem;
 }
 
 .contact-info a {
     color: #ff9800;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: #00bcd4;
 }
 
 .social-cta {
-    margin-top: 2rem;
     text-align: center;
+    margin-top: 2rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
 }
 
 .social-links a {
-    margin: 0 0.5rem;
     background-color: #00bcd4;
-    padding: 0.5rem 1.2rem;
-    border-radius: 6px;
-    display: inline-block;
+    color: #121212;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-weight: 600;
     transition: all 0.3s ease;
 }
 
 .social-links a:hover {
     background-color: #ff9800;
     color: #121212;
+    transform: translateY(-2px);
+}
+
+.contact-section .closing {
+    text-align: center;
+    margin-top: 2rem;
+    color: #ccc;
+    font-size: 1rem;
 }
 
 /* -------------------------
@@ -343,6 +404,11 @@ p {
     .about-container { flex-direction: column; text-align: center; }
     .about-image img { width: 100%; max-width: 300px; margin: auto; }
     .cards { grid-template-columns: 1fr; }
+    .contact-section { padding: 2rem 1rem; margin: 2rem 1rem; }
+    .contact-section h2 { font-size: 2rem; }
+    .contact-info p { font-size: 1rem; }
+    .social-links { flex-direction: column; gap: 0.8rem; }
+    .social-links a { width: 80%; margin: auto; }
 }
 
 @media (max-width: 480px) {
